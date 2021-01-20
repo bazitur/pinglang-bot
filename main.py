@@ -1,6 +1,6 @@
 from praw import Reddit as RedditAPI
 from telegram import Bot as TelegramBotAPI
-from flask import Flask
+from flask import Flask, render_template
 
 # app = Flask(__name__)
 
@@ -53,7 +53,7 @@ def post_something():
 # A welcome message to test our server
 @app.route('/')
 def index():
-    return "<h1>Welcome to our server !!</h1>"
+    return render_template('index.html')
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
