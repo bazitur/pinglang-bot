@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Simple Reddit/Telegram Heroku bot.{% endblock %}
 {% block content %}
-This is a content block!
+{%for data in reddit_data%}
+{{ data.title }}<hr/>
+{%endfor%}
 {% endblock %}
-
