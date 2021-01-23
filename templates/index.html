@@ -2,6 +2,7 @@
 {% block title %}Simple Reddit/Telegram Heroku bot.{% endblock %}
 {% block content %}
 {%for data in reddit_data%}
-{{ data.title }}<hr/>
+{{ data.id }}<a href="{{ data.url }}" target="_blank">{{ data.title }}</a>{{data.created_utc}}{{link_flair_template_id}}{{link_flair_text}}<hr/>
+{{data.selftext}}<hr/>
 {%endfor%}
 {% endblock %}
