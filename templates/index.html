@@ -2,7 +2,28 @@
 {% block title %}Simple Reddit/Telegram Heroku bot.{% endblock %}
 {% block content %}
 {%for data in reddit_data%}
-{{ data.id }}<a href="{{ data.url }}" target="_blank">{{ data.title }}</a>{{data.created_utc}}{{link_flair_template_id}}{{link_flair_text}}<hr/>
-{{data.selftext}}<hr/>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ data.title }}
+      <span class="tag">{{ data.flair}}</span>
+    </p>
+
+    <a href="" class="card-header-icon" target="_blank">
+      <span class="icon">
+        <i class="fas fa-link" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{data.selftext}}
+      <br>
+      <time>{{data.timestamp|datetime('full')}}</time>
+    </div>
+  </div>
+</div>
+<hr/>
 {%endfor%}
 {% endblock %}
